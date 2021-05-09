@@ -120,7 +120,7 @@ app.get("/files/:filename", function (req, res) {
   });
 });
 
-//Display all files in JSON
+//Display image
 app.get("/image/:filename", function (req, res) {
   gfs.files.findOne({ filename: req.params.filename }, (error, file) => {
     if (!file || file.length === 0) {
@@ -139,6 +139,19 @@ app.get("/image/:filename", function (req, res) {
         error: "Not an Image",
       });
     }
+  });
+});
+
+//Display users
+app.get("/users", function (req, res) {
+  return Upload.find({}, function (err, found) {
+    if (err) {
+      res.send(500);
+      return;
+    }
+    return res.json({
+      found,
+    });
   });
 });
 
