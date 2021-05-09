@@ -18,16 +18,24 @@ Where users can come and give their details for covid test
 UI
 
 localhost:3000
+
 -> To go to the home page where users can enter details
 
 ------
 API
 
 localhost:3000/files
+
 -> To see all the files available in db (You will get it in form of array)
 
 localhost:3000/files/<filename>
+  
 -> To get the details of the specific file in the db (You will get it in form of object)
   
 locahost:3000/image/<filename>
+  
 --> To see the image (You will get to see the image)
+
+locahost:3000/users
+
+--> To see all the users who have filled the form (You will get it in form of array)
